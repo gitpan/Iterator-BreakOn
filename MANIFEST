@@ -1,0 +1,22 @@
+.cvsignore
+Makefile
+Build.PL
+Changes
+examples/datasource.pm
+examples/example.pl
+lib/Iterator/BreakOn.pm
+lib/Iterator/BreakOn/Base.pm
+lib/Iterator/BreakOn/X.pm
+lib/Iterator/BreakOn/Event.pm
+MANIFEST
+META.yml			# Will be created by "make dist"
+README
+TODO
+t/00.load.t
+t/iterator-breakon.t
+t/pod-coverage.t
+t/pod.t
+debian/control
+debian/changelog
+debian/rules
+debian/libiterator-breakon-perl.examples

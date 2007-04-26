@@ -1,0 +1,30 @@
+---
+name: Iterator-BreakOn
+version: 0.3
+author:
+  - '"Víctor Moral" <victor@taquiones.net>'
+abstract: ~
+license: lgpl
+requires:
+  Class::Accessor: 0
+  Exception::Class: 0
+  List::MoreUtils: 0
+  Test::More: 0
+  Text::CSV: 0
+provides:
+  Iterator::BreakOn:
+    file: lib/Iterator/BreakOn.pm
+    version: 0.2
+  Iterator::BreakOn::Base:
+    file: lib/Iterator/BreakOn/Base.pm
+    version: 0.3
+  Iterator::BreakOn::Base::Event:
+    file: lib/Iterator/BreakOn/Event.pm
+    version: 0.1
+  Iterator::BreakOn::Event:
+    file: lib/Iterator/BreakOn/Event.pm
+    version: 0.1
+  Iterator::BreakOn::X:
+    file: lib/Iterator/BreakOn/X.pm
+    version: 0.2
+generated_by: Module::Build version 0.26
