@@ -31,6 +31,12 @@ use Exception::Class(
         description =>  'received an invalid name for an event',
         fields      =>  [ 'name' ],
     },        
+
+    'Iterator::BreakOn::X::csvfail' => {
+        isa         =>  'Iterator::BreakOn::X',
+        description =>  'fatal error in Text::CSV package',
+    },
+
 );
 
 sub full_message {
@@ -86,6 +92,10 @@ Raise when the user supplied get method is not valid.
 =item Iterator::BreakOn::X::invalid_event
 
 Raise when an event object receives a invalid name.
+
+=item Iterator::BreakOn::X::csvfail
+
+Detected a fatal error in C<Text::CSV> package.
 
 =back
 

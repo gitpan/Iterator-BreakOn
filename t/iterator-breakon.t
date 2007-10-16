@@ -2,7 +2,7 @@
 
 use lib qw(lib examples);
 
-use Test::More tests => 3;
+use Test::More tests => 6;
 
 use_ok('datasource', 'data samples');
 
@@ -23,7 +23,7 @@ my $iter = $class->new( 'datasource'    => $dh->new(),
                         on_last         => \&_fix_float_numbers,
                     );
 
-cmp_ok(ref($iter),'eq',$class, "${class}::new returns a valid object");                    
+cmp_ok(ref($iter),'eq',$class, "${class}::new returns a valid object"); 
 
 $iter->run();
 

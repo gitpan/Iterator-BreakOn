@@ -1,3 +1,10 @@
+libiterator-breakon-perl (0.4) unstable; urgency=low
+
+  * Bug fixes release
+  * Minor changes in test scripts about wrong number of parameters and so.
+
+ -- Victor Moral <victor@taquiones.net>  Tue, 16 Oct 2007 12:16:57 +0200
+
 libiterator-breakon-perl (0.3) unstable; urgency=low
 
   * New module for event objects management.

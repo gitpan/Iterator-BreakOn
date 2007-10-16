@@ -9,6 +9,7 @@ DESTDIR ?= /tmp
 MODULES=$(shell find lib -name "*.pm")
 OTHERS=$(wildcard examples/*.p[ml])
 CHECK_SOURCES=$(MODULES) $(BINARIES) $(OTHERS)
+DATA=$(wildcard examples/*.csv)
 
 #
 #	Test program
@@ -25,7 +26,7 @@ INSTALL=$(shell which install)
 DEBUILD=debuild -uc -us -sa
 
 #
-#	Do nothing for default
+#	Do nothing by default
 all:
 
 #
@@ -54,13 +55,18 @@ run:	check $(DEBUG)
 
 #
 #	Build the perl package
-build:		Build
+build:		Build data
 
 Build:		Build.PL
 	$(PERL) Build.PL installdirs=vendor
 
 binary:		build
 	$(PERL) Build 
+
+data:	$(DATA)
+
+examples/datasource.csv:
+	$(PERL) examples/make_csv_file.pl
 
 #
 #	Documents and manual pages
@@ -82,6 +88,7 @@ dist:	build
 clean:
 	-$(PERL) Build clean
 	rm -f *.gz *.orig *.bak
+	rm -f $(DATA)
 
 distclean:
 	-$(PERL) Build distclean

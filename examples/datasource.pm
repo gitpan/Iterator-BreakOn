@@ -40,6 +40,25 @@ sub next {
     return shift @{ $self->{source} };
 }
 
+sub dump_as_csv {
+    my  $self   =   shift;
+    my  $file   =   shift;
+
+    open(CSV,"> $file") || die "could not open ${file} for writing - $!";
+
+    print CSV '"location","zipcode","name","amount"',"\n";
+    while (my $item = $self->next()) {
+        print CSV sprintf('"%s","%u","%s","%.2f"',
+                            $item->get('location'),
+                            $item->get('zipcode'),
+                            $item->get('name'),
+                            $item->get('amount') ), "\n";
+    }
+    close(CSV);
+
+    return;
+}
+
 package datasource::item;
 
 sub new {
